@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"strconv"
 	"strings"
 )
 
@@ -29,4 +30,10 @@ func SplitFileByLine(file string) []string {
 
 func Print(day int, one interface{}, two interface{}) {
 	fmt.Printf("Day %d\nPart 1: %v\nPart 2: %v\n", day, one, two)
+}
+
+func ConvertBinaryStringToInt(s string) int {
+	i, err := strconv.ParseInt(s, 2, 0)
+	ErrorCheck(err, "Error converting string to int")
+	return int(i)
 }
